@@ -1,0 +1,76 @@
+
+<div id="log" class="container">
+
+    <div class="content first-content">
+        <div class="first-column">
+            <h2 class="title title-primary">Bem-Vindo</h2>
+            <p class="description description-primary">Já possui cadastro?</p>
+            <p class="description description-primary">Faça seu Login</p>
+            <button id="signin" class="btn btn-primary">Entrar</button>
+        </div>
+
+        <div class="second-column">
+            <h2 class="title title-second">Cadastre-se</h2>
+
+            <form class="form">
+                <label class="label-input" for="">
+                    <i class="far fa-user icon-modify"></i>
+                    <input type="text" placeholder="Nome Completo">
+                </label>
+
+                <label class="label-input" for="">
+                    <i class="far fa-envelope icon-modify"></i>
+                    <input type="email" placeholder="E-mail">
+                </label>
+
+                <label class="label-input" for="">
+                    <i class="fas fa-lock icon-modify"></i>
+                    <input type="password" placeholder="Senha">
+                </label>
+                <button class="btn btn-second">entrar</button>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="content second-content">
+        <div class="first-column">
+            <h2 class="title title-primary">Olá</h2>
+            <p class="description description-primary">Faça seu cadastro</p>
+            <button id="signup" class="btn btn-primary">Cadastrar</button>
+        </div>
+
+        <div class="second-column">
+            <h2 class="title title-second">Login</h2>
+
+            <form class="form">
+                <label class="label-input" for="">
+                    <i class="far fa-envelope icon-modify"></i>
+                    <input type="email" placeholder="E-mail">
+                </label>
+                <label class="label-input" for="">
+                    <i class="fas fa-lock icon-modify"></i>
+                    <input type="password" placeholder="Senha">
+                </label>
+                <a class="password" href="#">Esqueceu sua senha?</a>
+                <button class="btn btn-second">entrar</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script>
+    var btnSignin = document.querySelector("#signin");
+    var btnSignup = document.querySelector("#signup");
+
+    var body = document.querySelector("body");
+
+
+    btnSignin.addEventListener("click", function () {
+        body.className = "sign-in-js";
+    });
+
+    btnSignup.addEventListener("click", function () {
+        body.className = "sign-up-js";
+    })
+</script>
