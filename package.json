@@ -11,8 +11,10 @@
     "license": "ISC",
     "dependencies": {
         "body-parse": "^0.1.0",
+        "connect-flash": "^0.1.1",
         "express": "^4.17.1",
         "express-handlebars": "^5.2.0",
+        "express-session": "^1.17.1",
         "mariadb": "^2.5.1",
         "sequelize": "^6.3.5"
     }

@@ -1,3 +1,8 @@
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
 
 <div id="log" class="container">
 
@@ -12,22 +17,23 @@
         <div class="second-column">
             <h2 class="title title-second">Cadastre-se</h2>
 
-            <form class="form">
+            <form class="form" action="/add" method="POST">
                 <label class="label-input" for="">
                     <i class="far fa-user icon-modify"></i>
-                    <input type="text" placeholder="Nome Completo">
+                    <input type="text" placeholder="Nome Completo" name="nome">
                 </label>
 
                 <label class="label-input" for="">
                     <i class="far fa-envelope icon-modify"></i>
-                    <input type="email" placeholder="E-mail">
+                    <input type="email" placeholder="E-mail" name="Email">
                 </label>
 
                 <label class="label-input" for="">
                     <i class="fas fa-lock icon-modify"></i>
-                    <input type="password" placeholder="Senha">
+                    <input type="password" placeholder="Senha" name="senha">
                 </label>
-                <button class="btn btn-second">entrar</button>
+                <button class="btn btn-second" type="submit">Cadastrar</button>
+                
 
             </form>
         </div>
@@ -60,6 +66,8 @@
     </div>
 </div>
 <script>
+
+    
     var btnSignin = document.querySelector("#signin");
     var btnSignup = document.querySelector("#signup");
 

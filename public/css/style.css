@@ -494,7 +494,7 @@ table {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ecf0f1;
+    background-color: #09AFA7;
 }
 
 .content {
@@ -510,7 +510,7 @@ table {
 .content::before {
     content: "";
     position: absolute;
-    background-color: #09AFA7;
+    background-color: #464e4e;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;

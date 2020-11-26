@@ -1,4 +1,3 @@
-const { Sequelize } = require('./db');
 const db = require('./db');
 
 
@@ -7,10 +6,10 @@ const func = db.sequelize.define('funcionario', {
     nome: {
         type: db.Sequelize.STRING
     },
-    Localizacao: {
+    Email: {
         type: db.Sequelize.STRING
     },
-    medRespons: {
+    senha: {
         type: db.Sequelize.STRING
     }
 });
@@ -21,6 +20,7 @@ const post = db.sequelize.define('posto', {
     },
     localizacao: {
         type: db.Sequelize.STRING
+
     },
     MedRespons: {
         type: db.Sequelize.STRING
@@ -28,9 +28,9 @@ const post = db.sequelize.define('posto', {
 
 
 });
-func.hasMany(post)
+post.hasMany(func)
 
-// db.sequelize.sync({ force: true })
+//db.sequelize.sync({ force: true })
 
 module.exports = {
     post,

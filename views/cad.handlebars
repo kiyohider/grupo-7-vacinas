@@ -1,9 +1,8 @@
 <h1>lista de posts:</h1>
-{{#each posts}}
+{{#each funcionarios}}
 <small>{{dataValues.createdAt}}</small>
-<h1>{{dataValues.Nome}}</h1>
-<p>{{dataValues.localizacao}}</p>
-<p>{{dataValues.MedRespons}}</p>
+<h1>{{dataValues.nome}}</h1>
+<p>{{dataValues.idade}}</p>
 <a href="/deletar/{{dataValues.id}}"><button>Deletar</button></a>
 <hr>
 {{/each}}
