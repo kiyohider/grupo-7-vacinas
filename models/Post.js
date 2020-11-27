@@ -63,6 +63,21 @@ const post = db.sequelize.define('posto', {
     vacina10: {
         type: db.Sequelize.INTEGER
     },
+    vacina11: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina12: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina13: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina14: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina15: {
+        type: db.Sequelize.INTEGER
+    },
 
 
 

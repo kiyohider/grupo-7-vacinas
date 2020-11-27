@@ -6,24 +6,25 @@
             <div class="section-locations"></div>
         </div>
 
-
+        {{#each vacinas}}
         <div class="container">
             <div class="dropdown">
                 <!-- Basic dropdown -->
-
-                <p class="active">Posto de vacinação Jubileu</p>
-                <br> Localização
-                <br> Porto Alegre talz talz
+                <br id="nome">Posto: {{dataValues.Nome}}
+                <br id="medR">Medico responsavel: {{dataValues.MedRespons}}
+                <br> Localização:
+                <br id="localizacao"> {{dataValues.localizacao}}
                 <hr>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    data-target="#navbarSupportedContent{{dataValues.id}}"
+                    aria-controls="navbarSupportedContent{{dataValues.id}}" aria-expanded="false"
                     aria-label="Toggle navigation">
 
                     <p class="fa fa-plus-square"></p>
 
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent{{dataValues.id}}">
                     <ul class="navbar-nav ml-auto"></ul>
 
 
@@ -39,172 +40,52 @@
 
                         <tr>
                             <td>Dengue</td>
-                            <td>Disponível</td>
+                            <td>{{dataValues.vacina1}}</td>
                             <td>Febre Amarela</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina2}}</td>
                             <td>Hepatite A</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina3}}</td>
                         </tr>
 
                         <tr>
                             <td>Hepatite B</td>
-                            <td>Disponível</td>
+                            <td>{{dataValues.vacina4}}</td>
                             <td>Hepatite A e B</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina5}}</td>
                             <td>Herpes-zóster</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina6}}</td>
                         </tr>
 
                         <tr>
                             <td>HPV</td>
-                            <td>Disponível</td>
+                            <td>{{dataValues.vacina7}}</td>
                             <td>Influenza (gripe)</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina8}}</td>
                             <td>Meningocócica <br> ACWY ou C</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina9}}</td>
                         </tr>
 
                         <tr>
                             <td>Meningocócica B</td>
-                            <td>Disponível</td>
+                            <td>{{dataValues.vacina10}}</td>
                             <td>Pneumocócica 23-valente (polissacarídica(VPP23)</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina11}}</td>
                             <td>Pneumocócica13- valente (conjugada)(VPC13)</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina12}}</td>
                         </tr>
 
                         <tr>
                             <td>Tríplice bacteriana tipo adulto (dTpa) <br> ou dupla adulto (dT)</td>
-                            <td>Disponível</td>
+                            <td>{{dataValues.vacina13}}</td>
                             <td>Tríplice viral (SCR)</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina14}}</td>
                             <td>Varicela</td>
-                            <td>Disponível </td>
+                            <td>{{dataValues.vacina15}}</td>
                         </tr>
                     </table>
                     </a>
                 </div>
             </div>
         </div>
-
         <br>
-
-        <div class="container">
-            <div class="dropdown">
-                <!-- Basic dropdown -->
-
-                <p class="active">Posto de vacinação Jubileu</p>
-                <br> Localização
-                <br> Porto Alegre talz talz
-                <hr>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                    <p class="fa fa-plus-square"></p>
-
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-                    <ul class="navbar-nav ml-auto"></ul>
-
-
-                    <table>
-                        <tr>
-                            <th scope="col">Vacina</th>
-                            <th scope="col">Disponibilidade</th>
-                            <th scope="col">Vacina</th>
-                            <th scope="col">Disponibilidade</th>
-                            <th scope="col">Vacina</th>
-                            <th scope="col">Disponibilidade</th>
-                        </tr>
-
-                        <tr>
-                            <td>Dengue</td>
-                            <td>Disponível</td>
-                            <td>Febre Amarela</td>
-                            <td>Disponível </td>
-                            <td>Hepatite A</td>
-                            <td>Disponível </td>
-                        </tr>
-
-                        <tr>
-                            <td>Hepatite B</td>
-                            <td>Disponível</td>
-                            <td>Hepatite A e B</td>
-                            <td>Disponível </td>
-                            <td>Herpes-zóster</td>
-                            <td>Disponível </td>
-                        </tr>
-
-                        <tr>
-                            <td>HPV</td>
-                            <td>Disponível</td>
-                            <td>Influenza (gripe)</td>
-                            <td>Disponível </td>
-                            <td>Meningocócica <br> ACWY ou C</td>
-                            <td>Disponível </td>
-                        </tr>
-
-                        <tr>
-                            <td>Meningocócica B</td>
-                            <td>Disponível</td>
-                            <td>Pneumocócica 23-valente (polissacarídica(VPP23)</td>
-                            <td>Disponível </td>
-                            <td>Pneumocócica13- valente (conjugada)(VPC13)</td>
-                            <td>Disponível </td>
-                        </tr>
-
-                        <tr>
-                            <td>Tríplice bacteriana tipo adulto (dTpa) <br> ou dupla adulto (dT)</td>
-                            <td>Disponível</td>
-                            <td>Tríplice viral (SCR)</td>
-                            <td>Disponível </td>
-                            <td>Varicela</td>
-                            <td>Disponível </td>
-                        </tr>
-                    </table>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-
-
-
-</main>
-
-{{!-- <div class="container">
-  <h2>Dropdowns</h2>
-  <p>The .dropdown class is used to indicate a dropdown menu.</p>
-  <p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-      <li role="presentation" class="divider"></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-    </ul>
-  </div>
-</div> --}}
-
-<footer>
-    <div class="footer--area">
-        <div class="footer--item area1">
-            <div class="footer-social">
-                <a href=""><img src="images/twitter.png" /></a>
-                <a href=""><img src="images/linkedin.png" /></a>
-                <a href=""><img src="images/facebook.png" /></a>
-            </div>
-        </div>
-        <div class="footer--item area2">
-            rodapé
-        </div>
-    </div>
-</footer>
+        {{/each}}
