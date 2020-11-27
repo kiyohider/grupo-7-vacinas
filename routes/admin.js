@@ -1,20 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/Post');
+const banco = require('../models/Post');
 
 
 //rotas
+
 router.get('/', (req, res) => {
     res.render('home')
-});
-
-router.get('/login', (req, res) => {
-    res.render('login')
-});
-
-router.get('/vacina', (req, res) => {
-
-    res.render('vacina')
 });
 
 router.get('/postos', (req, res) => {
@@ -22,25 +14,37 @@ router.get('/postos', (req, res) => {
     res.render('postos')
 });
 
+router.get('/vacina', (req, res) => {
+
+    res.render('vacina')
+});
+
+router.get('/login', (req, res) => {
+    res.render('login')
+});
 
 router.get('/cad', (req, res) => {
-    Post.func.findAll({
-        order: [
-            ["id", "ASC"]
-        ]
-    }).then(function(funcionarios) {
-        res.render("cad", { funcionarios: funcionarios })
+    banco.post.findAll().then(function(vacinas) {
+        res.render("cad", { vacinas: vacinas })
     })
 
 });
 
-router.get('/deletar/:id', (req, res) => {
-    Post.func.destroy({ where: { "id": req.params.id } }).then(function() {
-        res.redirect("/cad")
-    }).catch(function(erro) {
-        res.send("nao existe!")
+
+router.post('/cad', (req, res) => {
+    banco.post.findOne({ _id: req.body.id }).then((vacina) => {
+        vacina.vacina1 = req.body.vacina1
+        vacina.save().then(() => {
+            req.flash("success_msg", "valor alterado com sucesso")
+            res.redirect("/cad")
+        }).catch((err) => {
+            req.flash("error_msg", "houve um erro interno" + err)
+            res.redirect("/cad");
+        })
     })
-});
+
+})
+
 
 
 router.post('/add', (req, res) => {
@@ -56,19 +60,52 @@ router.post('/add', (req, res) => {
         erros.push({ texto: "senha tem menos de 5 caracteres" })
     }
 
+
     if (erros.length > 0) {
         res.render("login", { erros: erros })
     } else {
-        Post.func.create({
+        banco.func.create({
             nome: req.body.nome,
             Email: req.body.Email,
             senha: req.body.senha
-        }).then(function() {
-            res.send("login")
-        }).catch(function(erro) {
-            res.send("erro: " + erro)
+        }).then(() => {
+            req.flash("success_msg", "cadastro efetuado com sucesso");
+            res.redirect("login")
+        }).catch((erro) => {
+            req.flash("error_msg", "erro ao se cadastrar!")
         })
     }
+
+
+});
+
+router.get('/form', (req, res) => {
+    res.render('form')
+});
+router.post('/addP', (req, res) => {
+
+    banco.post.create({
+        Nome: req.body.Nome,
+        localizacao: req.body.localizacao,
+        Email: req.body.Email,
+        Senha: req.body.Senha,
+        MedRespons: req.body.MedRespons,
+        vacina1: req.body.vacina1,
+        vacina2: req.body.vacina2,
+        vacina3: req.body.vacina3,
+        vacina4: req.body.vacina4,
+        vacina5: req.body.vacina5,
+        vacina6: req.body.vacina6,
+        vacina7: req.body.vacina7,
+        vacina8: req.body.vacina8,
+        vacina9: req.body.vacina9,
+        vacina10: req.body.vacina10
+
+    }).then(() => {
+        res.redirect("login")
+    }).catch((erro) => {
+        res.render("error_msg")
+    })
 
 
 });

@@ -1,8 +1,20 @@
 <h1>lista de posts:</h1>
-{{#each funcionarios}}
-<small>{{dataValues.createdAt}}</small>
-<h1>{{dataValues.nome}}</h1>
-<p>{{dataValues.idade}}</p>
-<a href="/deletar/{{dataValues.id}}"><button>Deletar</button></a>
-<hr>
+{{#each vacinas}}
+<form action="/cad" method="POST">
+    <h3>vacina1 :{{dataValues.vacina1}}</h3>
+    <div class="container">
+        <input type="number" id="vac1" name="vacina1" placeholder="numero de vacinas" class="form-control"
+            value="{{dataValues.vacina1}}"></input>
+        <button type="submit">editar</button>
+    </div>
+    <h3>vacina2 :{{dataValues.vacina2}}</h3>
+    <h3>vacina3 :{{dataValues.vacina3}}</h3>
+    <h3>vacina4 :{{dataValues.vacina4}}</h3>
+    <h3>vacina5 :{{dataValues.vacina5}}</h3>
+    <h3>vacina6 :{{dataValues.vacina6}}</h3>
+    <h3>vacina7 :{{dataValues.vacina7}}</h3>
+    <h3>vacina8 :{{dataValues.vacina8}}</h3>
+    <h3>vacina9 :{{dataValues.vacina9}}</h3>
+    <h3>vacina10 :{{dataValues.vacina10}}</h3>
+</form>
 {{/each}}

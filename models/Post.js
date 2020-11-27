@@ -7,7 +7,8 @@ const func = db.sequelize.define('funcionario', {
         type: db.Sequelize.STRING
     },
     Email: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        unique: true
     },
     senha: {
         type: db.Sequelize.STRING
@@ -22,9 +23,47 @@ const post = db.sequelize.define('posto', {
         type: db.Sequelize.STRING
 
     },
+    Email: {
+        type: db.Sequelize.STRING,
+        unique: true
+    },
+    Senha: {
+        type: db.Sequelize.STRING
+    },
     MedRespons: {
         type: db.Sequelize.STRING
-    }
+    },
+    vacina1: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina2: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina3: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina4: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina5: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina6: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina7: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina8: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina9: {
+        type: db.Sequelize.INTEGER
+    },
+    vacina10: {
+        type: db.Sequelize.INTEGER
+    },
+
 
 
 });
