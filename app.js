@@ -7,9 +7,12 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const admin = require("./routes/admin");
 const path = require("path");
-
-//configurações
-//sessão
+const usuarios = require("./routes/usuario")
+const postos = require("./routes/posto")
+const cad_postos = require("./routes/cad_posto")
+const editarVacinas = require("./routes/editeVac")
+    //configurações
+    //sessão
 app.use(session({
         secret: "senha",
         resave: true,
@@ -33,8 +36,10 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, "public")));
 //rotas
 app.use('/', admin)
-
-
+app.use('/', usuarios)
+app.use('/', postos)
+app.use('/', cad_postos)
+app.use('/', editarVacinas)
 
 
 

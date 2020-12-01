@@ -10,6 +10,10 @@ const func = db.sequelize.define('funcionario', {
         type: db.Sequelize.STRING,
         unique: true
     },
+    admin: {
+        type: db.Sequelize.STRING,
+        default: 'not'
+    },
     senha: {
         type: db.Sequelize.STRING
     }
