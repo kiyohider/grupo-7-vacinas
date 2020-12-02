@@ -1,6 +1,6 @@
-const localstrategy = require("passport-local").Strategy
-const banco = require('../models/Post')
-const bcrypt = require("bcryptjs")
+const localstrategy = require("passport-local").Strategy;
+const banco = require('../models/Post');
+const bcrypt = require("bcryptjs");
 
 
 
@@ -11,37 +11,38 @@ module.exports = function(passport) {
         banco.func.findOne({ where: { Email: Email } }).then((user) => {
             if (!user) {
 
-                return done(null, false, { message: "conta não existe" })
+                return done(null, false, { message: "conta não existe" });
             }
 
             bcrypt.compare(senha, user.senha, (erro, batem) => {
                 if (batem) {
 
-                    return done(null, user)
+                    return done(null, user);
                 } else {
 
-                    return done(null, false, { message: "senha incorreta" })
+                    return done(null, false, { message: "senha incorreta" });
                 }
-            })
+            });
 
-        })
+        });
 
-    }))
+    }));
 
 
 
     passport.serializeUser((user, done) => {
 
-        done(null, user.id)
-    })
+        done(null, user.id);
+    });
 
     passport.deserializeUser((id, done) => {
 
         banco.func.findByPk(id, (err, user) => {
-            done(err, user)
+            done(err, user);
+
         })
 
-    })
+    });
 
 
 

@@ -7,10 +7,10 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const admin = require("./routes/admin");
 const path = require("path");
-const usuarios = require("./routes/usuario")
-const postos = require("./routes/posto")
-const cad_postos = require("./routes/cad_posto")
-const editarVacinas = require("./routes/editeVac")
+const usuarios = require("./routes/usuario");
+const postos = require("./routes/posto");
+const cad_postos = require("./routes/cad_posto");
+const editarVacinas = require("./routes/editeVac");
 const passport = require("passport");
 require("./config/auth")(passport);
 
@@ -28,33 +28,33 @@ app.use(session({
     cookie: {
         maxAge: 30 * 60 * 1000
     }
-}))
+}));
 
-app.use(passport.initialize())
-app.use(passport.session())
-    //flash
-app.use(flash())
-    //middleware
+app.use(passport.initialize());
+app.use(passport.session());
+//flash
+app.use(flash());
+//middleware
 app.use((req, res, next) => {
-        res.locals.success_msg = req.flash("success_msg")
-        res.locals.error_msg = req.flash("error_msg")
-        res.locals.error = req.flash("error")
-        next()
+        res.locals.success_msg = req.flash("success_msg");
+        res.locals.error_msg = req.flash("error_msg");
+        res.locals.error = req.flash("error");
+        next();
     })
     //handlebars
-app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
-app.set('view engine', 'handlebars')
-    //body-parse
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-    // public
+app.engine('handlebars', handlebars({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+//body-parse
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+// public
 app.use(express.static(path.join(__dirname, "public")));
 //rotas
-app.use('/', usuarios)
-app.use('/', admin)
-app.use('/', postos)
-app.use('/', authenticationMiddleware, cad_postos)
-app.use('/', editarVacinas)
+app.use('/', usuarios);
+app.use('/', admin);
+app.use('/', postos);
+app.use('/', cad_postos);
+app.use('/', editarVacinas);
 
 
 

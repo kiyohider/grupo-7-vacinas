@@ -3,7 +3,7 @@ const router = express.Router();
 const banco = require('../models/Post');
 
 router.get('/cadastroP', (req, res) => {
-    res.render('cadastroP')
+    res.render('cadastroP');
 });
 
 
@@ -35,7 +35,7 @@ router.post('/addP', (req, res) => {
         res.redirect("login")
     }).catch((erro) => {
         res.render("error_msg")
-    })
+    });
 });
 
 

@@ -5,12 +5,12 @@ const banco = require('../models/Post');
 
 
 router.get('/', (req, res) => {
-    res.render('home')
+    res.render('home');
 });
 
 router.get('/vacina', (req, res) => {
 
-    res.render('vacina')
+    res.render('vacina');
 });
 
 
