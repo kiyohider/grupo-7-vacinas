@@ -22,9 +22,7 @@ router.post('/editarP', (req, res) => {
     console.log(ID);
     res.redirect("editeVacinas");
 
-    // banco.post.findAll({ where: { 'id': req.params.id } }).then(function(vacinas) {
-    //     res.render("editeVacinas", { vacinas: vacinas })
-    // })
+
 
 });
 
@@ -211,4 +209,4 @@ router.post('/cad1', (req, res) => {
 
 
 
-module.exports = router
+module.exports = router;

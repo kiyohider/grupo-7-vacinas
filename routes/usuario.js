@@ -6,26 +6,22 @@ const bcrypt = require('bcryptjs');
 
 router.get("/login", (req, res) => {
     res.render('login');
+
 });
 
 
 
-// router.post('/logar', (req, res, next) => {
-//     passport.authenticate("local", {
-//         successRedirect: "/",
-//         failureRedirect: "/login",
-//         failureFlash: true
-//     })(req, res, next)
-//     res.redirect('/')
-// })
+router.post('/logar',
+    passport.authenticate("local", {
 
-router.post('/logar', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: 'login'
-}));
+        successRedirect: "/",
+        failureRedirect: "/login",
+        failureFlash: true
+    }), (req, res) => {
 
+        res.render('/');
 
-
+    });
 
 router.post('/cadastro', (req, res) => {
     var erros = [];

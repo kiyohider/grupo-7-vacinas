@@ -22,6 +22,7 @@ module.exports = function(passport) {
 
                     return done(null, false, { message: "senha incorreta" });
                 }
+
             });
 
         });
@@ -37,7 +38,9 @@ module.exports = function(passport) {
 
     passport.deserializeUser((id, done) => {
 
+
         banco.func.findByPk(id, (err, user) => {
+
             done(err, user);
 
         })

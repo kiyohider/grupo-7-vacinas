@@ -41,4 +41,4 @@ router.post('/addP', (req, res) => {
 
 
 
-module.exports = router
+module.exports = router;

@@ -86,11 +86,11 @@ const post = db.sequelize.define('posto', {
 
 
 });
-post.hasMany(func)
+post.hasMany(func);
 
 //db.sequelize.sync({ force: true })
 
 module.exports = {
     post,
     func
-}
+};
