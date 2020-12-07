@@ -41,6 +41,7 @@ module.exports = function(passport) {
 
         banco.func.findByPk(id, (err, user) => {
 
+
             done(err, user);
 
         })
