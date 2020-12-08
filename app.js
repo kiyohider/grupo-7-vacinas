@@ -21,6 +21,10 @@ function authenticationMiddleware(req, res, next) {
 }
 
 //sessão
+
+
+//passport
+app.use(passport.initialize());
 app.use(session({
     secret: "123",
     resave: false,
@@ -29,10 +33,7 @@ app.use(session({
         maxAge: 30 * 60 * 1000
     }
 }));
-
-//passport
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.session());
 
 //flash
 app.use(flash());
