@@ -4,7 +4,7 @@ const banco = require('../models/Post');
 const { admin } = require("../helper/admin")
 var ID = 1;
 
-router.get('/editeVacinas', (req, res) => {
+router.get('/editeVacinas', admin, (req, res) => {
     banco.post.findAll({ where: { 'id': ID } }).then(function(vacinas) {
         res.render("editeVacinas", { vacinas: vacinas });
     });

@@ -11,21 +11,30 @@ const usuarios = require("./routes/usuario");
 const postos = require("./routes/posto");
 const cad_postos = require("./routes/cad_posto");
 const editarVacinas = require("./routes/editeVac");
+//const cookieParser = require("cookie-parser");
+//const morgan = require("morgan")
 const passport = require("passport");
 require("./config/auth")(passport);
 
 //configurações
 
-
 //sessão
 app.use(session({
+
     secret: "123",
-    resave: true,
-    saveUnitialized: true,
+    resave: false,
+    saveUnitialized: false,
+    cookie: {
+        expires: 600000
+    }
 
 }));
 
-//passport
+
+app.get('/', (req, res) => {
+    res.redirect('/login');
+});
+passport
 app.use(passport.initialize());
 app.use(passport.session());
 

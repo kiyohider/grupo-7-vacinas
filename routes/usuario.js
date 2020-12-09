@@ -11,6 +11,8 @@ router.get("/login", (req, res) => {
 
 
 
+
+
 router.post('/logar',
     passport.authenticate("local", {
 
@@ -79,3 +81,70 @@ router.post('/cadastro', (req, res) => {
 
 
 module.exports = router
+
+
+// router.post("/logar", async(req, res) => {
+//     const { Email, senha } = req.body;
+
+//     const user = await banco.func.findOne({ where: { Email } });
+
+//     if (!user)
+//         return res.send("nao tem esse ai");
+
+//     if (!await bcrypt.compare(senha, user.senha))
+//         return res.send("invalid pass");
+
+//     res.send({ user });
+// })
+
+// router.post("/logar", (req, res) => {
+//     var Email = req.body.Email,
+//         senha = req.body.senha;
+
+//     banco.func.findOne({ where: { Email: Email } }).then(function(user) {
+//         if (!user) {
+//             console.log(senha, "comparada1")
+//             res.redirect('/login');
+//         } else {
+//             console.log(senha, "comparada2")
+//             bcrypt.compare(senha, bcrypt.hash, (erro, batem) => {
+//                 console.log(senha, "comparada3")
+//                 req.session.user = user.dataValues;
+//                 res.redirect('/');
+//             });
+
+//         }
+//     });
+// });
+
+
+
+
+// router.post('/logar', function(req, res) {
+//     var Email = req.body.Email;
+//     var senha = req.body.senha;
+//     if (Email) {
+//         console.log(Email, "email existe")
+//         banco.func.findOne({ where: { Email: req.body.Email } }).then((error, results, fields) => {
+//             console.log(Email, "email comparado")
+//             bcrypt.compare(senha, bcrypt.hash, (erro, batem) => {
+//                 console.log(senha, "comparada")
+
+//                 console.log(Email, "senha fechou ")
+//                 console.log(Email, "ok logado")
+//                 req.session.login = true;
+//                 req.session.Email = Email;
+
+//                 res.redirect('/');
+
+
+//             });
+
+
+//         });
+//     } else {
+//         console.log(Email, "9")
+//         res.send('Please enter Username and Password!');
+//         res.end();
+//     }
+// });
