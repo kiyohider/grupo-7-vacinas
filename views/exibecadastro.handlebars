@@ -1,13 +1,13 @@
 {{#each postos}}
 
 
-<form action="/editarP" method="POST">
+<div>
     <p>{{dataValues.Nome}}</p>
     <p>{{dataValues.Email}}</p>
     <p>{{dataValues.localizacao}}</p>
-    <button type="submit">editar</button>
+    <a href="/editeVacinas/{{dataValues.id}}"><button >editar</button></a>
+</div>
 
-</form>
 
 
 

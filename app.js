@@ -31,10 +31,8 @@ app.use(session({
 }));
 
 
-app.get('/', (req, res) => {
-    res.redirect('/login');
-});
-passport
+
+//passport
 app.use(passport.initialize());
 app.use(passport.session());
 
