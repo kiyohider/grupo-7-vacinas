@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const banco = require('../models/Post');
 
+//pagina para cadastrar posto
+
 router.get('/cadastroP', (req, res) => {
     res.render('cadastroP');
 });
 
-
+//post para confirmar o cadastro
 router.post('/addP', (req, res) => {
 
     banco.post.create({

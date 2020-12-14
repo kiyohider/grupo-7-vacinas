@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 
 
 
-
+//autenticação de login que entra em loop se o login estiver certo
 module.exports = function(passport) {
     passport.use(new localstrategy({ usernameField: 'Email', passwordField: "senha" }, (Email, senha, done) => {
         banco.func.findOne({ where: { Email: Email } }).then((user) => {

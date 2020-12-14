@@ -1,3 +1,5 @@
+//modulo para bloquear os acesso direto a paginas que necessitam de login
+
 module.exports = {
 
     admin: function(req, res, next) {

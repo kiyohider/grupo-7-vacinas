@@ -3,7 +3,7 @@ const router = express.Router();
 const banco = require('../models/Post');
 
 
-
+//rotas da home e da tabela informativa das vacinas
 router.get('/', (req, res) => {
     res.render('home');
 });

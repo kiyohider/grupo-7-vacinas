@@ -1,6 +1,6 @@
 const db = require('./db');
 
-
+//criação das tables na database
 const func = db.sequelize.define('funcionario', {
 
     nome: {
@@ -87,8 +87,11 @@ const post = db.sequelize.define('posto', {
 
 });
 post.hasMany(func);
+//comando para criar as tables caso ainda nao existam na database deve ser executado somente uma vez
+//depois comentado novamente
 
 //db.sequelize.sync({ force: true })
+
 
 module.exports = {
     post,

@@ -5,7 +5,7 @@ const { admin } = require("../helper/admin")
 
 
 
-
+//exibe os postos cadastrados
 router.get('/exibecadastro', (req, res) => {
     banco.post.findAll().then(function(postos) {
         res.render("exibecadastro", { postos: postos });
@@ -14,7 +14,7 @@ router.get('/exibecadastro', (req, res) => {
 });
 
 
-
+//pagina de edição de quantidade de vacinas
 router.get('/editeVacinas/:id', (req, res) => {
     banco.post.findOne({ where: { id: req.params.id } }).then((vacina) => {
         console.log(vacina.id)
@@ -23,6 +23,7 @@ router.get('/editeVacinas/:id', (req, res) => {
     });
 });
 
+//posts que servem para editar cada quantidade
 router.post('/cad1', (req, res) => {
     banco.post.findOne({ _id: req.body.id }).then((vacina) => {
         vacina.vacina1 = req.body.vacina1
